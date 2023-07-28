@@ -16,17 +16,22 @@ class Solution():
         
         list.sort()
         counter = 1
+        new_list = []
         for num in list:
-            if num == counter:
-                pass
-        
-        return
+            if num > 0 and not num in new_list:
+                new_list.append(num)
+                
+        for i in new_list:
+            if i == counter:
+                counter += 1
+                continue
+        return counter
         
         
 if __name__ == "__main__":
     sol = Solution()
-    
+    print(sol.missing_pos_int([3, 4, -1, 1]))
 '''
-Time Complexity: 
-Space Complexity: 
+Time Complexity: O(n log n) 
+Space Complexity: O(n)
 '''
