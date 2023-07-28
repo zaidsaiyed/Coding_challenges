@@ -12,20 +12,18 @@ You can modify the input array in-place.
 
 class Solution():
     
-    def missing_pos_int(self, list):
+    def missing_pos_int(self, nums):
         
-        list.sort()
-        counter = 1
-        new_list = []
-        for num in list:
-            if num > 0 and not num in new_list:
-                new_list.append(num)
-                
-        for i in new_list:
-            if i == counter:
-                counter += 1
-                continue
-        return counter
+        lenght = len(nums)    
+        for i in range(lenght):
+            while 1 <= nums[i] <= lenght and nums[nums[i] - 1] != nums[i]:
+                nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+
+        for i in range(lenght):
+            if nums[i] != i + 1:
+                return i + 1
+
+        return lenght + 1
         
         
 if __name__ == "__main__":
@@ -33,6 +31,6 @@ if __name__ == "__main__":
     print(sol.missing_pos_int([3, 4, -1, 1]))
 
 '''
-Time Complexity: O(n log n) 
-Space Complexity: O(n)
+Time Complexity: O(n) 
+Space Complexity: O(1)
 '''
