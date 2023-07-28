@@ -31,6 +31,7 @@ class Solution():
 if __name__ == "__main__":
     sol = Solution()
     print(sol.missing_pos_int([3, 4, -1, 1]))
+
 '''
 Time Complexity: O(n log n) 
 Space Complexity: O(n)
