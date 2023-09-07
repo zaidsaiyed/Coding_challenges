@@ -1,4 +1,5 @@
 list = [6,2,5,7,1]
-list.sort()
+#list.sort()
 
-print(list)
+#print(list)
+print(list.sort())
