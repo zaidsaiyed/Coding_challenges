@@ -1,4 +1,7 @@
-list = [6,2,5,7,1]
-list.sort()
+# This is a test file
+myList = [51,21,13,54,5]
 
-print(list)
+print(myList)
+myList.sort()
+
+print(myList)
